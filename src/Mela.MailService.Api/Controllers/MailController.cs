@@ -32,7 +32,7 @@ public class MailController : ControllerBase
         {
             From = { new MailboxAddress(string.Empty, _configuration.UserName) },
             To = { new MailboxAddress(string.Empty, request.RecipientEmail) },
-            Subject = "Результаты исследования",
+            Subject = request.Subject,
             Body = new TextPart(MimeKit.Text.TextFormat.Text) { Text = request.Content },
         };
 
